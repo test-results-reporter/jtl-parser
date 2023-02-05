@@ -1,5 +1,5 @@
 {
-  "name": "jtl-parser",
+  "name": "parse-jtl",
   "version": "1.0.0",
   "description": "parse jmeter jtl files",
   "main": "src/index.js",
