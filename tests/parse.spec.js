@@ -38,7 +38,7 @@ describe('parse', () => {
           "error_rate": 0.25,
           "sent_rate": 0.15,
           "received_rate": 0.15,
-          "median": 523
+          "median": 1077
         },
         "call2": {
           "label": "call2",
@@ -71,7 +71,7 @@ describe('parse', () => {
           "error_rate": 0,
           "sent_rate": 0.08,
           "received_rate": 0.08,
-          "median": 885
+          "median": 1422.5
         }
       },
       "transactions": {},
@@ -109,7 +109,7 @@ describe('parse', () => {
         "error_rate": 0.13,
         "sent_rate": 0.31,
         "received_rate": 0.31,
-        "median": 980
+        "median": 1077
       },
       "total_transactions": {
         "label": "TOTAL",
@@ -158,7 +158,7 @@ describe('parse', () => {
           "error_rate": 0.25,
           "sent_rate": 0.15,
           "received_rate": 0.15,
-          "median": 523
+          "median": 1077
         },
         "call2": {
           "label": "call2",
@@ -191,7 +191,7 @@ describe('parse', () => {
           "error_rate": 0,
           "sent_rate": 0.08,
           "received_rate": 0.08,
-          "median": 885
+          "median": 1422.5
         }
       }
     });
@@ -232,7 +232,7 @@ describe('parse', () => {
         "error_rate": 0,
         "sent_rate": 19.45,
         "received_rate": 142.68,
-        "median": 358
+        "median": 465
       },
       "S01_Create_Booking_T02_Login": {
         "label": "S01_Create_Booking_T02_Login",
@@ -266,7 +266,7 @@ describe('parse', () => {
         "error_rate": 0,
         "sent_rate": 11.71,
         "received_rate": 660.69,
-        "median": 3761
+        "median": 3935
       },
       "S01_Create_Booking_T03_Select_Vertical": {
         "label": "S01_Create_Booking_T03_Select_Vertical",
@@ -300,7 +300,7 @@ describe('parse', () => {
         "error_rate": 0,
         "sent_rate": 1.46,
         "received_rate": 13.85,
-        "median": 4
+        "median": 5
       },
       "S01_Create_Booking_T04_Fill_Details": {
         "label": "S01_Create_Booking_T04_Fill_Details",
@@ -334,7 +334,7 @@ describe('parse', () => {
         "error_rate": 0,
         "sent_rate": 10.34,
         "received_rate": 6.48,
-        "median": 1035
+        "median": 1613
       },
       "S01_Create_Booking_T05_Search_Offers": {
         "label": "S01_Create_Booking_T05_Search_Offers",
@@ -368,7 +368,7 @@ describe('parse', () => {
         "error_rate": 0,
         "sent_rate": 6.21,
         "received_rate": 5.77,
-        "median": 3393
+        "median": 3811
       },
       "S01_Create_Booking_T06_Click_Book-Now": {
         "label": "S01_Create_Booking_T06_Click_Book-Now",
@@ -402,7 +402,7 @@ describe('parse', () => {
         "error_rate": 1,
         "sent_rate": 3.95,
         "received_rate": 2.19,
-        "median": 56
+        "median": 69
       }
     });
     expect(result.total_transactions).deep.equals({
@@ -592,7 +592,7 @@ describe('parse', () => {
       "error_rate": 0.17,
       "sent_rate": 15.2,
       "received_rate": 309.17,
-      "median": 720,
+      "median": 965,
       "p50_latency": 7,
       "p90_latency": 1011,
       "p95_latency": 2965,
@@ -887,7 +887,7 @@ describe('parse', () => {
       "error_rate": 0.04,
       "sent_rate": 15.2,
       "received_rate": 309.22,
-      "median": 33,
+      "median": 33.5,
       "average_latency": 359.89,
       "p50_latency": 7,
       "p90_latency": 1011,
@@ -909,7 +909,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 3.1,
         "Average": 542,
-        "Median": 358,
+        "Median": 465,
         "90% Line": 1010,
         "95% Line": 1010,
         "99% Line": 1010,
@@ -924,7 +924,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 1.04,
         "Average": 3884.8,
-        "Median": 3761,
+        "Median": 3935,
         "90% Line": 4528,
         "95% Line": 4528,
         "99% Line": 4528,
@@ -939,7 +939,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 2.74,
         "Average": 4.8,
-        "Median": 4,
+        "Median": 5,
         "90% Line": 6,
         "95% Line": 6,
         "99% Line": 6,
@@ -954,7 +954,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 1.46,
         "Average": 1472.2,
-        "Median": 1035,
+        "Median": 1613,
         "90% Line": 1926,
         "95% Line": 1926,
         "99% Line": 1926,
@@ -969,7 +969,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 0.98,
         "Average": 3752.4,
-        "Median": 3393,
+        "Median": 3811,
         "90% Line": 5336,
         "95% Line": 5336,
         "99% Line": 5336,
@@ -984,7 +984,7 @@ describe('aggregate', () => {
         "# Samples": 5,
         "Throughput": 1.44,
         "Average": 88.2,
-        "Median": 56,
+        "Median": 69,
         "90% Line": 178,
         "95% Line": 178,
         "99% Line": 178,
@@ -999,7 +999,7 @@ describe('aggregate', () => {
         "# Samples": 30,
         "Throughput": 2.67,
         "Average": 1624.07,
-        "Median": 720,
+        "Median": 965,
         "90% Line": 4508,
         "95% Line": 4528,
         "99% Line": 5336,
