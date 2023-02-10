@@ -151,14 +151,7 @@ function setSummaryCounts(total_record) {
     total_record.error_rate = +((total_record.errors / total_record.samples).toFixed(2));
     total_record.sent_rate = +((total_record.sent / (total_record.end - total_record.start)).toFixed(2));
     total_record.received_rate = +((total_record.received / (total_record.end - total_record.start)).toFixed(2));
-
-
-    const n = sorted_response_times.length;
-    if (n % 2 === 0) {
-      total_record.median = parseInt((sorted_response_times[n / 2] + sorted_response_times[(n / 2) + 1]) / 2);
-    } else {
-      total_record.median = sorted_response_times[(n + 1) / 2];
-    }
+    total_record.median = median(sorted_response_times);
   } else {
     total_record.max = 0;
     total_record.min = 0;
@@ -171,12 +164,7 @@ function setSummaryCounts(total_record) {
     total_record.p90_latency = calculatePercentile(sorted_latencies, 90);
     total_record.p95_latency = calculatePercentile(sorted_latencies, 95);
     total_record.p99_latency = calculatePercentile(sorted_latencies, 99);
-    const n = sorted_latencies.length;
-    if (n % 2 === 0) {
-      total_record.median_latency = parseInt((sorted_latencies[n / 2] + sorted_latencies[(n / 2) + 1]) / 2);
-    } else {
-      total_record.median_latency = sorted_latencies[(n + 1) / 2];
-    }
+    total_record.median_latency = median(sorted_latencies);
   } else {
     total_record.max_latency = 0;
     total_record.min_latency = 0;
@@ -189,6 +177,19 @@ function calculatePercentile(sorted_response_times, percentile) {
   const xPercent = parseInt(Math.ceil(sorted_response_times.length * divisor));
   return sorted_response_times.slice(0, xPercent).slice(-1)[0];
 };
+
+function median(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+
+  if (array.length % 2 !== 0) {
+    return parseFloat(array[Math.floor(array.length / 2)]);
+  } else {
+    const mid = array.length / 2;
+    return (array[mid - 1] + array[mid]) / 2;
+  }
+}
 
 function getFilteredRecord(aggregate_report, transaction) {
   const filtered_report = {}
