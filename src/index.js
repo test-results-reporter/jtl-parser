@@ -1,6 +1,6 @@
 const path = require('path');
 const fs = require("fs");
-const csv_json = require('csvjson');
+const csv_json = require('./helpers/csvjson');
 
 function parse(jtl_file_path) {
   const cwd = process.cwd();
